@@ -104,21 +104,17 @@ footer {
       background-color: #eab000;
       color: #FFF; }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .button-contact:hover, .button-contact:active {
     background-color: #4c4c4c;
     color: #FFF; }
 
   /* Header
   ------------------------------------------------------------*/ }
-@media (min-width: 768px) and (min-width: 768px) {
+@media (min-width: 769px) and (min-width: 769px) {
   .top {
-    background-image: url("./image/top.jpg");
-    height: 500px;
-    width: 100%;
-    background-size: cover;
-    background-position: center center; } }
-@media (min-width: 768px) {
+    height: 500px; } }
+@media (min-width: 769px) {
   #contents .container {
     -webkit-flex-direction: row;
     flex-direction: row;
