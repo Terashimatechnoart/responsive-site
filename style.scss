@@ -1,0 +1,160 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+// font-family
+$baseFontFamily :'Noto Sans JP';
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #9d562c;
+$keyColor: #eab000;
+$fontColor: #4c4c4c;
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+    color: $fontColor;
+    font-family:$baseFontFamily;
+    background-color: $baseColor;
+}
+
+a {
+    @include link-colors($keyColor,darken($keyColor,10%),lighten($keyColor,5%),darken($keyColor,10%));
+    text-decoration: none;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header
+------------------------------------------------------------*/
+.top {
+  background-image: url("./image/top.jpg");
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section{
+    padding: 60px 0;
+    .container{
+        width: 90%;
+        @extend .block-center;
+    }
+    h1{
+      color:$subColor;
+      font-size: 3.2rem;
+      font-weight: 500;
+      padding-bottom: 50px;
+    }
+}
+
+// Contents
+#contents{
+    .container{
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);
+    }
+    h2{
+        color:$keyColor;
+        margin-bottom: 60px;
+    }
+    .text-box{
+        @include flex(1);
+        margin: 10px 10px;
+        padding: 20px;
+        background-color: #ffffff;
+        @include box-sizing(border-box);
+    }
+    h2{
+        margin-bottom:10px;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    p{
+        font-size: 1.4rem;
+    }
+}
+
+/* Footer
+------------------------------------------------------------*/
+footer{
+    background-color: $subColor;
+    padding: 60px 0;
+    text-align: center;
+    color: #FFF;
+
+
+p{
+    font-size: 2em;
+    padding-bottom:20px;
+}
+
+a{
+          margin: auto;
+          text-align: center;
+          padding: 5px 0;
+          width: 180px;
+          display: block;
+          color: #FFF;
+          font-weight: bold;
+          background-color: #fec517;
+          @include border-radius(10px);
+          font-size: 1.6rem;
+          &:hover{
+            background-color: $keyColor;
+            color:#FFF;
+          }
+        }
+}
+
+  // PC
+@media (min-width: 768px) {
+  .button-contact {
+    &:hover, &:active {
+      background-color: $fontColor;
+      color: #FFF;
+    }
+  }
+
+  /* Header
+  ------------------------------------------------------------*/
+@media (min-width: 768px) {
+    .top {
+  background-image: url("./image/top.jpg");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+        
+    }
+}
+
+  // Contents
+  #contents {
+    .container {
+      @include flex-direction(row);
+      justify-content: space-between;
+    }
+    .skill-box {
+      margin: 0 10px;
+    }
+  }
+}
